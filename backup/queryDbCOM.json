@@ -32,12 +32,6 @@
         "nomeParagrafo": "Estrazione KO SOM su Mixed Order",
         "codicePlSql": "\n--mixed order\nselect a.request_id,--b.*,fd.* ,\n--regexp_match(fd.document_xml, '{\"code\":(.*?)}') codice_errore,--recupera i ko som\nregexp_match(fd.document_xml, '{\"code\":\"(.*?)}') codice_errore--recupera i ko som\nfrom action a, fault b,fault_doc fd  where \nb.action_id=a.id and \n--a.name='Receive Unlock Order' and \na.status='FA' and\nfd.id=b.document_id and \nb.ts_resolution is null and\n--fd.document_xml like '%Asset non trovato%'and\na.id in (\nselect id from action where status='FA' and request_id in \n(970015,\n966042,\n939489,\n922181,\n915601,\n898864\n))",
         "outPutSql": "\"request_id\"\t\"codice_errore\"\n898864\t\"{\"\"EOC_ERROR_1014\\\"\",\\\"\"reason\\\"\":\\\"\"Request cannot be processed reason: Product id=1588140343725 specified in order not found in SR for customer.\\\"\",\\\"\"status\\\"\":\\\"\"404\\\"\"\"\"}\"\n915601\t\"{\"\"EOC_W3_ORDER_0002\\\"\",\\\"\"reason\\\"\":\\\"\"MSISDN Already Active!\\\"\",\\\"\"message\\\"\":\\\"\"CustomerId/ MSISDN already exits in service registry, Onboarding order cannot be submitted\\\"\",\\\"\"status\\\"\":\\\"\"400\\\"\"\"\"}\"\n939489\t\"{\"\"EOC_W3_ORDER_0002\\\"\",\\\"\"reason\\\"\":\\\"\"MSISDN Already Active!\\\"\",\\\"\"message\\\"\":\\\"\"CustomerId/ MSISDN already exits in service registry, Onboarding order cannot be submitted\\\"\",\\\"\"status\\\"\":\\\"\"400\\\"\"\"\"}\"\n970015\t\"{\"\"EOC_W3_ORDER_0002\\\"\",\\\"\"reason\\\"\":\\\"\"MSISDN Already Active!\\\"\",\\\"\"message\\\"\":\\\"\"CustomerId/ MSISDN already exits in service registry, Onboarding order cannot be submitted\\\"\",\\\"\"status\\\"\":\\\"\"400\\\"\"\"\"}\""
-      },
-      {
-        "id": "2.4",
-        "nomeParagrafo": "PROVA PAR COM",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
-        "outPutSql": "Incolla qui la tua tabella"
       }
     ]
   },
