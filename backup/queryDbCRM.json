@@ -16,17 +16,5 @@
         "outPutSql": "Incolla qui la tua tabella"
       }
     ]
-  },
-  {
-    "id": "2",
-    "nomeCapitolo": "PROVA CRM",
-    "paragrafi": [
-      {
-        "id": "2.1",
-        "nomeParagrafo": "Inserisci il nome del Paragrafo",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
-        "outPutSql": "Incolla qui la tua tabella"
-      }
-    ]
   }
 ]
