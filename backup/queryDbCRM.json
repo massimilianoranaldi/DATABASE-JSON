@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "nomeCapitolo": "*** CRM",
+    "paragrafi": [
+      {
+        "id": "1.1",
+        "nomeParagrafo": "Par CRM",
+        "codicePlSql": "Scrivi qui il codice PLSQL",
+        "outPutSql": "Incolla qui la tua tabella"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "nomeCapitolo": "PROVA CRM",
+    "paragrafi": [
+      {
+        "id": "2.1",
+        "nomeParagrafo": "Inserisci il nome del Paragrafo",
+        "codicePlSql": "Scrivi qui il codice PLSQL",
+        "outPutSql": "Incolla qui la tua tabella"
+      }
+    ]
+  }
+]
