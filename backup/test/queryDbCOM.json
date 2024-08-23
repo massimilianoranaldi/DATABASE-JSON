@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "nomeCapitolo": "*** COM",
+    "nomeCapitolo": "Inserisci il nome del Capitolo",
     "paragrafi": [
       {
         "id": "1.1",
@@ -29,18 +29,6 @@
     "paragrafi": [
       {
         "id": "3.1",
-        "nomeParagrafo": "Inserisci il nome del Paragrafo",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
-        "outPutSql": "Incolla qui la tua tabella"
-      }
-    ]
-  },
-  {
-    "id": "4",
-    "nomeCapitolo": "Inserisci il nome del Capitolo",
-    "paragrafi": [
-      {
-        "id": "4.1",
         "nomeParagrafo": "Inserisci il nome del Paragrafo",
         "codicePlSql": "Scrivi qui il codice PLSQL",
         "outPutSql": "Incolla qui la tua tabella"
