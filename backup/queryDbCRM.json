@@ -11,8 +11,8 @@
       },
       {
         "id": "1.2",
-        "nomeParagrafo": "PROVA PAR CRM",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
+        "nomeParagrafo": "Preferential list - community",
+        "codicePlSql": "select NUMERAZIONE\nFROM NUM_PL_COMM \nwhere IDCLIENTE = 'kk'\nand upper(STATO) = ''\nAND NUMERAZIONE IS NOT NULL",
         "outPutSql": "Incolla qui la tua tabella"
       }
     ]
