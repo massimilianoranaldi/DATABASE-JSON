@@ -274,17 +274,5 @@
         "outPutSql": "Incolla qui la tua tabella"
       }
     ]
-  },
-  {
-    "id": "16",
-    "nomeCapitolo": "Inserisci il nome del Capitolo",
-    "paragrafi": [
-      {
-        "id": "16.1",
-        "nomeParagrafo": "Inserisci il nome del Paragrafo",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
-        "outPutSql": "Incolla qui la tua tabella"
-      }
-    ]
   }
 ]
