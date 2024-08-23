@@ -8,6 +8,12 @@
         "nomeParagrafo": "Par CRM",
         "codicePlSql": "Scrivi qui il codice PLSQL",
         "outPutSql": "Incolla qui la tua tabella"
+      },
+      {
+        "id": "1.2",
+        "nomeParagrafo": "PROVA PAR CRM",
+        "codicePlSql": "Scrivi qui il codice PLSQL",
+        "outPutSql": "Incolla qui la tua tabella"
       }
     ]
   },
