@@ -14,12 +14,6 @@
         "nomeParagrafo": "Inserisci il nome del Paragrafo",
         "codicePlSql": "Scrivi qui il codice PLSQL",
         "outPutSql": "Incolla qui la tua tabella"
-      },
-      {
-        "id": "1.3",
-        "nomeParagrafo": "Inserisci il nome del Paragrafo",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
-        "outPutSql": "Incolla qui la tua tabella"
       }
     ]
   },
