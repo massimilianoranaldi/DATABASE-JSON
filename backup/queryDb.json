@@ -262,5 +262,16 @@
         "outPutSql": "IDCOMMERCIALORDER\tTIPO_ORDINE\tSOTTOTIPO_ORDINE\tBSSORDER\tCAUSALE_ORDINE\tCODICEPIN\n1-629047550831\tAttivazione\tAttivazione\tY\tPrima Attivazione\tFWI0997776822001"
       }
     ]
+  },
+  {
+    "id": "15",
+    "paragrafi": [
+      {
+        "id": "15.1",
+        "nomeParagrafo": "Estrazione ordini di assistenza tecnica",
+        "codicePlSql": "SELECT a.* FROM ACTION a, action_msg b\nWHERE \na.message_id=b.id AND\nb.message_xml LIKE '%&%'\nAND a.name='Send order odat'\nAND a.status='SA'\nAND a.ts_created>sysdate-180\nand rownum<2",
+        "outPutSql": "ID\tNAME\tDIRECTION\tSTATUS\tTS_REQUESTED\tTS_CREATED\tTS_ENQUEUED\tTS_FIRST_START\tTS_START\tTS_END\tPRIORITY\tTS_TODO\tQUEUE\tREQUEST_ID\tMESSAGE_ID\tSYSTEM\tCFG_ID\tHANDLER\tRESPONSE_ID\tADB_SOURCE\tRESULT\n70867316490\tSend order odat\toutbound\tSA\t14/08/2024 17:00:39,000000\t14/08/2024 17:00:39,305885\t14/08/2024 17:04:29,000000\t14/08/2024 17:00:39,445000\t14/08/2024 17:04:30,000000\t14/08/2024 17:04:30,000000\t1\t\tqueue.sap.out\t3583962961\t-34422129784\tsap\t1805\t/esb2sap/process/businessService/OrderManagement/bwBSInvioOrdineATOut.process\t\t\t"
+      }
+    ]
   }
 ]
