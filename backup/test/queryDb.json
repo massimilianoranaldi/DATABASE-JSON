@@ -278,12 +278,6 @@
         "nomeParagrafo": "Inserisci il nome del Paragrafo",
         "codicePlSql": "Scrivi qui il codice PLSQL",
         "outPutSql": "Incolla qui la tua tabella"
-      },
-      {
-        "id": "15.2",
-        "nomeParagrafo": "Inserisci il nome del Paragrafo",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
-        "outPutSql": "Incolla qui la tua tabella"
       }
     ]
   }
