@@ -273,16 +273,5 @@
         "outPutSql": "ID\tNAME\tDIRECTION\tSTATUS\tTS_REQUESTED\tTS_CREATED\tTS_ENQUEUED\tTS_FIRST_START\tTS_START\tTS_END\tPRIORITY\tTS_TODO\tQUEUE\tREQUEST_ID\tMESSAGE_ID\tSYSTEM\tCFG_ID\tHANDLER\tRESPONSE_ID\tADB_SOURCE\tRESULT\n70867316490\tSend order odat\toutbound\tSA\t14/08/2024 17:00:39,000000\t14/08/2024 17:00:39,305885\t14/08/2024 17:04:29,000000\t14/08/2024 17:00:39,445000\t14/08/2024 17:04:30,000000\t14/08/2024 17:04:30,000000\t1\t\tqueue.sap.out\t3583962961\t-34422129784\tsap\t1805\t/esb2sap/process/businessService/OrderManagement/bwBSInvioOrdineATOut.process\t\t\t"
       }
     ]
-  },
-  {
-    "id": "16",
-    "paragrafi": [
-      {
-        "id": "16.1",
-        "nomeParagrafo": "Inserisci il nome del Paragrafo",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
-        "outPutSql": "Incolla qui la tua tabella"
-      }
-    ]
   }
 ]
