@@ -268,10 +268,5 @@
         "outPutSql": "IDCOMMERCIALORDER\tTIPO_ORDINE\tSOTTOTIPO_ORDINE\tBSSORDER\tCAUSALE_ORDINE\tCODICEPIN\n1-629047550831\tAttivazione\tAttivazione\tY\tPrima Attivazione\tFWI0997776822001"
       }
     ]
-  },
-  {
-    "id": "15",
-    "nomeCapitolo": "Inserisci il nome del Capitologggg",
-    "paragrafi": []
   }
 ]
