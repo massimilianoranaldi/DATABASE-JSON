@@ -272,13 +272,6 @@
   {
     "id": "15",
     "nomeCapitolo": "Inserisci il nome del Capitologggg",
-    "paragrafi": [
-      {
-        "id": "15.1",
-        "nomeParagrafo": "Inserisci il nome del Paragrafogggttrdc",
-        "codicePlSql": "Scrivi qui il codice PLSQLffffewcewcssrc",
-        "outPutSql": "Incolla qui la tua tabellasfvfdvfdvdf"
-      }
-    ]
+    "paragrafi": []
   }
 ]
