@@ -8,12 +8,6 @@
         "nomeParagrafo": "Par COMB",
         "codicePlSql": "Scrivi qui il codice PLSQL",
         "outPutSql": "Incolla qui la tua tabella"
-      },
-      {
-        "id": "1.2",
-        "nomeParagrafo": "PROVA PAR COMB",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
-        "outPutSql": "Incolla qui la tua tabella"
       }
     ]
   },
