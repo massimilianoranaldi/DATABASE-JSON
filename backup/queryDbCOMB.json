@@ -5,9 +5,9 @@
     "paragrafi": [
       {
         "id": "1.1",
-        "nomeParagrafo": "Par COMB",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
-        "outPutSql": "Incolla qui la tua tabella"
+        "nomeParagrafo": "Estrae action associate ad un cdf",
+        "codicePlSql": "select a.name,a.id,c.name,c.id,b.name,b.value,c.status from request a , detail b ,action c \nwhere b.root_id=a.root_id and \n--b.value ='556023903' and b.name='id_billing_account_rc'\nb.value in ('69553034574','69553034575','69540311570','69553041762') and b.name='transaction_id'\nand c.request_id=a.id",
+        "outPutSql": "\"name\"\t\"id\"\t\"name\"\t\"id\"\t\"name\"\t\"value\"\t\"status\"\n\"Subentro SI\"\t140213083\t\"Subentro SI Kenan Old Cli\"\t1250685437\t\"transaction_id\"\t\"69553034574\"\t\"WP\"\n\"Subentro SI\"\t140213083\t\"Retrieve Ase Cust Subentro SI Old Cli\"\t1230610700\t\"transaction_id\"\t\"69553034574\"\t\"SA\"\n\"Subentro SI\"\t140213083\t\"Conf Retr Ase Cust Subentro SI Old Cli\"\t1250685432\t\"transaction_id\"\t\"69553034574\"\t\"SA\"\n\"Subentro SI\"\t140213083\t\"Receive Subentro SI\"\t1230610691\t\"transaction_id\"\t\"69553034574\"\t\"SA\"\n\"Subentro SI\"\t140213083\t\"Close Request Subentro SI\"\t1230610706\t\"transaction_id\"\t\"69553034574\"\t\"TD\"\n\"Subentro SI\"\t140213087\t\"Retrieve Ase Cust Subentro SI Old Cli\"\t1230610737\t\"transaction_id\"\t\"69553034575\"\t\"SA\"\n\"Subentro SI\"\t140213087\t\"Conf Retr Ase Cust Subentro SI Old Cli\"\t1250685425\t\"transaction_id\"\t\"69553034575\"\t\"SA\"\n\"Subentro SI\"\t140213087\t\"Receive Subentro SI\"\t1230610704\t\"transaction_id\"\t\"69553034575\"\t\"SA\"\n\"Subentro SI\"\t140213087\t\"Close Request Subentro SI\"\t1230610745\t\"transaction_id\"\t\"69553034575\"\t\"TD\"\n\"Subentro SI\"\t140213087\t\"Subentro SI Kenan Old Cli\"\t1250685433\t\"transaction_id\"\t\"69553034575\"\t\"WP\""
       },
       {
         "id": "1.2",
