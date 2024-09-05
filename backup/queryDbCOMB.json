@@ -12,7 +12,7 @@
       {
         "id": "1.2",
         "nomeParagrafo": "Estrae i messaggi di errore associati ad action fallite per un certo account",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
+        "codicePlSql": "select a.* from fault a, fault_doc b \nwhere b.id=a.document_id \nand a.action_id  in \n(\nselect c.id from request a , detail b ,action c \nwhere b.root_id=a.root_id and \n--b.value='69553034574' and b.name='transaction_id'\nb.value ='556023903' and b.name='id_billing_account_rc'\nand c.request_id=a.id\nand c.status='FA'\n)",
         "outPutSql": "Incolla qui la tua tabella"
       },
       {
