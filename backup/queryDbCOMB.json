@@ -14,6 +14,12 @@
         "nomeParagrafo": "Estrae i messaggi di errore associati ad action fallite per un certo account",
         "codicePlSql": "Scrivi qui il codice PLSQL",
         "outPutSql": "Incolla qui la tua tabella"
+      },
+      {
+        "id": "1.3",
+        "nomeParagrafo": "fff",
+        "codicePlSql": "Scrivi qui il codice PLSQLfff",
+        "outPutSql": "Incolla qui la tua tabellafff"
       }
     ]
   }
