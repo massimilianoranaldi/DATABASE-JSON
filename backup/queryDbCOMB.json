@@ -6,26 +6,8 @@
       {
         "id": "1.1",
         "nomeParagrafo": "Estrazione action a partire dall'account ",
-        "codicePlSql": "select a.name,a.id,c.name,c.id,b.name,b.value,c.status from request a , detail b ,action c \nwhere b.root_id=a.root_id and \nb.value ='P1135357074' and b.name='id_billing_account_rc'\nand c.request_id=a.id",
+        "codicePlSql": "select a.name,a.id,c.name,c.id,b.name,b.value,c.status from request a , detail b ,action c \nwhere b.root_id=a.root_id and \n--b.value ='556023903' and b.name='id_billing_account_rc'\n--b.value='69553034574' and b.name='transaction_id'\nand c.request_id=a.id",
         "outPutSql": "\"name\"\t\"id\"\t\"name\"\t\"id\"\t\"name\"\t\"value\"\t\"status\"\n\"Change Billing Element\"\t108489814\t\"Receive Change Billing Element\"\t950652579\t\"id_billing_account_rc\"\t\"P1135357074\"\t\"SA\"\n\"Change Billing Element\"\t108489814\t\"Change Billing Element Kenan\"\t950652627\t\"id_billing_account_rc\"\t\"P1135357074\"\t\"FA\"\n\"Change Billing Element\"\t108489814\t\"Retrieve Ase Customer Chg BE\"\t950652617\t\"id_billing_account_rc\"\t\"P1135357074\"\t\"SA\"\n\"Change Billing Element\"\t108489814\t\"Close Request Change Billing Element\"\t950652644\t\"id_billing_account_rc\"\t\"P1135357074\"\t\"TD\"\n\"Change Billing Element\"\t108489814\t\"Change Billing Element Pbs\"\t950652637\t\"id_billing_account_rc\"\t\"P1135357074\"\t\"TD\"\n\"Change Billing Element\"\t108489814\t\"Confirm Retrieve Ase Customer Chg BE\"\t1164032612\t\"id_billing_account_rc\"\t\"P1135357074\"\t\"SA\""
-      },
-      {
-        "id": "1.2",
-        "nomeParagrafo": "Estrazione messaggio di fault a partire dalle action fallite associate ad un certo account",
-        "codicePlSql": "\nselect a.* from fault a, fault_doc b \nwhere b.id=a.document_id \nand a.action_id  in \n(\nselect c.id from request a , detail b ,action c \nwhere b.root_id=a.root_id and \nb.value ='P1135357074' and b.name='id_billing_account_rc'\nand c.request_id=a.id\nand c.status='FA'\n)",
-        "outPutSql": "\"id\"\t\"error_code\"\t\"ts_created\"\t\"ts_resolution\"\t\"action_id\"\t\"process\"\t\"document_id\"\t\"reprocess\"\t\"request_id\"\t\"source_action_name\"\t\"exception_type\"\t\"error_description\"\t\"retry_number\"\n85545920\t\"TIBCO-BW-PALETTE-REST-2000027\"\t2024-07-22 13:33:07.823 +0200\t\t950652627\t\"api.Utility.bwInvokeUdt\"\t85549273\t\t108489814\t\"Change Billing Element Kenan\"\t\t\t4"
-      }
-    ]
-  },
-  {
-    "id": "2",
-    "nomeCapitolo": "PROVA COMB",
-    "paragrafi": [
-      {
-        "id": "2.1",
-        "nomeParagrafo": "Inserisci il nome del Paragrafo",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
-        "outPutSql": "Incolla qui la tua tabella"
       }
     ]
   }
