@@ -5,9 +5,15 @@
     "paragrafi": [
       {
         "id": "1.1",
-        "nomeParagrafo": "Estrazione action a partire dall'account ",
-        "codicePlSql": "select a.name,a.id,c.name,c.id,b.name,b.value,c.status from request a , detail b ,action c \nwhere b.root_id=a.root_id and \n--b.value ='556023903' and b.name='id_billing_account_rc'\n--b.value='69553034574' and b.name='transaction_id'\nand c.request_id=a.id",
-        "outPutSql": "\"name\"\t\"id\"\t\"name\"\t\"id\"\t\"name\"\t\"value\"\t\"status\"\n\"Change Billing Element\"\t108489814\t\"Receive Change Billing Element\"\t950652579\t\"id_billing_account_rc\"\t\"P1135357074\"\t\"SA\"\n\"Change Billing Element\"\t108489814\t\"Change Billing Element Kenan\"\t950652627\t\"id_billing_account_rc\"\t\"P1135357074\"\t\"FA\"\n\"Change Billing Element\"\t108489814\t\"Retrieve Ase Customer Chg BE\"\t950652617\t\"id_billing_account_rc\"\t\"P1135357074\"\t\"SA\"\n\"Change Billing Element\"\t108489814\t\"Close Request Change Billing Element\"\t950652644\t\"id_billing_account_rc\"\t\"P1135357074\"\t\"TD\"\n\"Change Billing Element\"\t108489814\t\"Change Billing Element Pbs\"\t950652637\t\"id_billing_account_rc\"\t\"P1135357074\"\t\"TD\"\n\"Change Billing Element\"\t108489814\t\"Confirm Retrieve Ase Customer Chg BE\"\t1164032612\t\"id_billing_account_rc\"\t\"P1135357074\"\t\"SA\""
+        "nomeParagrafo": "Par COMB",
+        "codicePlSql": "Scrivi qui il codice PLSQL",
+        "outPutSql": "Incolla qui la tua tabella"
+      },
+      {
+        "id": "1.2",
+        "nomeParagrafo": "Estrae i messaggi di errore associati ad action fallite per un certo account",
+        "codicePlSql": "Scrivi qui il codice PLSQL",
+        "outPutSql": "Incolla qui la tua tabella"
       }
     ]
   }
