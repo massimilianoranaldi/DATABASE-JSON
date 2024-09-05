@@ -300,7 +300,7 @@
       {
         "id": "17.1",
         "nomeParagrafo": "Cluster 1 - Numeri Telefono non allineati CRM FARC",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
+        "codicePlSql": "select * from action a, request b\nwhere a.name='Notify Change Number PS' \nand a.system='farc'\nand b.name='Wireline Provisioning'\n--and b.name='Mobile Provisioning'\nand b.id=a.request_id \nand a.ts_created>sysdate-365 \nand rownum<10 \nand a.status ='SK'",
         "outPutSql": "Incolla qui la tua tabella"
       }
     ]
