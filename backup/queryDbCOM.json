@@ -35,7 +35,7 @@
       },
       {
         "id": "2.4",
-        "nomeParagrafo": "Inserisci il nome del Paragrafo",
+        "nomeParagrafo": "Estrae il credito residuo",
         "codicePlSql": "SELECT b.message_xml,\n  regexp_matches(b.message_xml::text, '<tns1:CREDITO__RESIDUO>([0-9.]+)</tns1:CREDITO__RESIDUO>') AS credito_residuo\nFROM action a\nJOIN action_msg b ON b.id = a.message_id\nWHERE 1=1\n  AND a.name = 'Receive Credit Transfer MNP Recipient'\n  and a.request_id in (\n  893632,\n970585\n  )",
         "outPutSql": "\"id\"\t\"name\"\t\"direction\"\t\"status\"\t\"ts_requested\"\t\"ts_created\"\t\"ts_enqueued\"\t\"ts_first_start\"\t\"ts_start\"\t\"ts_end\"\t\"priority\"\t\"ts_todo\"\t\"queue\"\t\"request_id\"\t\"message_id\"\t\"system\"\t\"cfg_id\"\t\"handler\"\t\"response_id\"\t\"adb_source\"\t\"result\"\t\"credito_residuo\"\n620157014061\t\"Receive Credit Transfer MNP Recipient\"\t\"inbound\"\t\"SA\"\t\t2024-07-25 10:00:30.463 +0200\t\t2024-07-25 10:00:30.000 +0200\t2024-07-25 10:00:30.000 +0200\t2024-07-25 10:00:30.000 +0200\t\t\t\"mog-publisher-in\"\t893632\t2487115\t\"mog\"\t238\t\"com2mog.module/com2mog.processes.businessService.CreditTransferIn\"\t0\t\t\t\"{5.91}\"\n620157848021\t\"Receive Credit Transfer MNP Recipient\"\t\"inbound\"\t\"SA\"\t\t2024-08-19 11:29:53.075 +0200\t\t2024-08-19 11:29:53.000 +0200\t2024-08-19 11:29:53.000 +0200\t2024-08-19 11:29:53.000 +0200\t\t\t\"mog-publisher-in\"\t970585\t3052852\t\"mog\"\t238\t\"com2mog.module/com2mog.processes.businessService.CreditTransferIn\"\t0\t\t\t\"{8.55}\""
       }
