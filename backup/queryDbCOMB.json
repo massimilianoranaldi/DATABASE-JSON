@@ -16,5 +16,17 @@
         "outPutSql": "Incolla qui la tua tabella"
       }
     ]
+  },
+  {
+    "id": "2",
+    "nomeCapitolo": "Inserisci il nome del Capitolo",
+    "paragrafi": [
+      {
+        "id": "2.1",
+        "nomeParagrafo": "Inserisci il nome del Paragrafo",
+        "codicePlSql": "Scrivi qui il codice PLSQL",
+        "outPutSql": "\"id\",\"name\",\"direction\",\"status\",\"ts_requested\",\"ts_created\",\"ts_enqueued\",\"ts_first_start\",\"ts_start\",\"ts_end\",\"priority\",\"ts_todo\",\"queue\",\"request_id\",\"message_id\",\"system\",\"cfg_id\",\"handler\",\"response_id\",\"adb_source\",\"result\"\n303632,Receive Create New Service Instance,inbound,SA,2024-09-06 11:50:56.329 +0200,2024-09-06 11:50:56.412 +0200,2024-09-12 10:35:00.077 +0200,2024-09-06 11:50:56.000 +0200,2024-09-12 10:35:00.000 +0200,2024-09-12 10:35:00.000 +0200,,,queue-billing2crm-in-pub,48998,196184,billing,47,billing2crm_itf_in_in_order.module/businessService.OrderManagement.NewServiceInstance.bwBSStartNewSIIn,196185,,\n303633,Retrieve Ase Customer New SI,outbound,SA,2024-09-12 10:35:00.270 +0200,2024-09-06 11:50:56.913 +0200,2024-09-12 10:13:40.250 +0200,2024-09-06 11:50:59.653 +0200,2024-09-12 10:35:00.000 +0200,2024-09-12 10:35:03.000 +0200,,,queue.billing.om.out,48998,196438,billing,48,billing2crm_itf_out_in_order.module/businessService.OrderManagement.NewServiceInstance.bwBSRetrieveAseCustomerOut,0,,\n303634,New SI Kenan,outbound,SA,2024-09-12 10:35:03.386 +0200,2024-09-06 11:50:56.913 +0200,2024-09-12 12:35:00.108 +0200,2024-09-06 14:12:59.421 +0200,2024-09-12 12:35:00.000 +0200,2024-09-12 12:35:01.000 +0200,,,queue.kenan3.out,48998,197731,billing,49,billing2crm_itf_out_in_order.module/businessService.OrderManagement.NewServiceInstance.bwBSCreateNewSIKenanOut,0,,\n303635,New SI Pbs,outbound,FA,2024-09-12 12:35:01.354 +0200,2024-09-06 11:50:56.913 +0200,,2024-09-09 09:58:18.000 +0200,2024-09-12 12:35:01.612 +0200,2024-09-12 12:19:07.000 +0200,,,queue.kenan3.out,48998,197733,billing,50,billing2crm_itf_out_in_order.module/businessService.OrderManagement.NewServiceInstance.bwBSCreateNewSIPbsOut,0,,\n303636,Close Request New SI,outbound,SA,2024-09-12 12:19:07.378 +0200,2024-09-06 11:50:56.913 +0200,,2024-09-09 09:58:19.000 +0200,2024-09-12 12:19:07.000 +0200,2024-09-12 12:19:07.000 +0200,,,queue.billing.om.out,48998,0,billing,52,com-architecture/businessService.bwBSCloseRequestOut,0,,\n303920,Confirm Retrieve Ase Customer New SI,inbound,SA,2024-09-12 10:35:03.000 +0200,2024-09-06 14:12:52.831 +0200,,2024-09-06 14:12:56.000 +0200,2024-09-12 10:35:03.000 +0200,2024-09-12 10:35:03.000 +0200,,,queue-billing2crm-in-pub,48998,196439,billing,56,billing2crm_itf_in_in_order.module/businessService.OrderManagement.NewServiceInstance.bwBSConfirmAseCustomerIn,0,,\n305900,Confirm Create New SI Kenan,inbound,SA,2024-09-12 12:35:01.000 +0200,2024-09-09 09:58:13.686 +0200,,2024-09-09 09:58:17.000 +0200,2024-09-12 12:35:01.000 +0200,2024-09-12 12:35:01.000 +0200,,,queue-billing2crm-out-sub,48998,197732,billing,53,billing2crm_itf_in_in_order.module/businessService.OrderManagement.NewServiceInstance.bwBSConfirmNewSIKenanIn,0,,\n305901,Confirm New SI Pbs,inbound,SA,2024-09-12 12:19:07.000 +0200,2024-09-09 09:58:18.005 +0200,,2024-09-09 09:58:19.000 +0200,2024-09-12 12:19:07.000 +0200,2024-09-12 12:19:07.000 +0200,,,queue-billing2crm-in-pub,48998,197734,billing,54,billing2crm_itf_in_in_order.module/businessService.OrderManagement.NewServiceInstance.bwBSConfirmNewSIPbsIn,0,,"
+      }
+    ]
   }
 ]
