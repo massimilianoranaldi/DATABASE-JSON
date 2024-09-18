@@ -268,5 +268,17 @@
         "outPutSql": "IDCOMMERCIALORDER\tTIPO_ORDINE\tSOTTOTIPO_ORDINE\tBSSORDER\tCAUSALE_ORDINE\tCODICEPIN\n1-629047550831\tAttivazione\tAttivazione\tY\tPrima Attivazione\tFWI0997776822001"
       }
     ]
+  },
+  {
+    "id": "15",
+    "nomeCapitolo": "SPOOL SU FILE",
+    "paragrafi": [
+      {
+        "id": "15.1",
+        "nomeParagrafo": "Script per il pool",
+        "codicePlSql": "SET LONG 32000; -- Imposta il limite massimo di caratteri per i campi CLOB (modifica il numero se necessario)\nSET LONGCHUNKSIZE 1000000; -- Imposta il chunk size\nSET PAGESIZE 50000; -- Imposta il numero massimo di righe per pagina\nSET LINESIZE 32000; -- Imposta la lunghezza della linea per evitare troncamenti\nSET TRIMSPOOL ON;\n\nSPOOL C:\\Users\\massimiliano.ranaldi\\output2.txt;\n\nSELECT to_char(a.id) actId, b.message_xml\nFROM action a, action_msg b\nWHERE a.system = 'farc'\nAND a.status = 'SA'\nAND a.request_id = 2768936401\nAND b.id = a.message_id;\n\nSPOOL OFF;",
+        "outPutSql": "Incolla qui la tua tabella"
+      }
+    ]
   }
 ]
