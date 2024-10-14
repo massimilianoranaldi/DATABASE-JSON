@@ -280,5 +280,17 @@
         "outPutSql": "Incolla qui la tua tabella"
       }
     ]
+  },
+  {
+    "id": "16",
+    "nomeCapitolo": "Query analisi SDC esiti",
+    "paragrafi": [
+      {
+        "id": "16.1",
+        "nomeParagrafo": "Estrazione esiti su tabella di frontiera consumer",
+        "codicePlSql": "dd",
+        "outPutSql": "dd"
+      }
+    ]
   }
 ]
