@@ -46,5 +46,17 @@
         "outPutSql": "ORD                 \tCONTRATTO  \t    PART_NUM\n7-13627984317\t1013627984315\tPHX60652"
       }
     ]
+  },
+  {
+    "id": "4",
+    "nomeCapitolo": "ANALISI POPZ",
+    "paragrafi": [
+      {
+        "id": "4.1",
+        "nomeParagrafo": "Query Catalogo",
+        "codicePlSql": "\n--TC1 \nselect codice_popz_seq,ropz_padre,SMS_ATTIV , SMS_DISATT from siebel.cx_popz_catalog a where \n(codice_popz_seq, ropz_padre) IN\n(('POPZ508254','ROPZ4802'),\n('POPZ507049','ROPZ4847'))\n\n--TC2 \nSELECT CODICE_POPZ_seq, ROPZ_PADRE,bundle_rda,bundle_dati,qos\nFROM siebel.cx_popz_catalog \nWHERE (CODICE_POPZ_seq, ROPZ_PADRE) IN (\n('POPZ510054','ROPZ4775'),\n('POPZ510053','ROPZ4781'),\n('POPZ510015','ROPZ4801'))",
+        "outPutSql": "CODICE_POPZ_SEQ\tROPZ_PADRE\tSMS_ATTIV\tSMS_DISATT\nPOPZ507049\tROPZ4847\tAll Inclusive Unlimited e' attiva a 14,45 euro/mese. Scopri le novita' a te dedicate sulla nostra APP windtre.it/W3 e con WINDAY, ogni giorno una sorpresa!\tAll Inclusive Unlimited e' stata disattivata. Per informazioni sulle offerte WINDTRE visita l'app o vai su windtre.it\nPOPZ508254\tROPZ4802\tDi Piu' Full 5G Unlimited e' attiva a 16,99 euro/mese. Scopri le novita' a te dedicate sulla nostra APP windtre.it/W3 e con WINDAY, ogni giorno una sorpresa!\tDi Piu' Full 5G Unlimited e' stata disattivata. Per informazioni sulle offerte WINDTRE visita l'app o vai su windtre.it"
+      }
+    ]
   }
 ]
