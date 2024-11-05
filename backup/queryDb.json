@@ -310,5 +310,17 @@
         "outPutSql": "Incolla qui la tua tabella"
       }
     ]
+  },
+  {
+    "id": "18",
+    "nomeCapitolo": "ANALISI POPZ",
+    "paragrafi": [
+      {
+        "id": "18.1",
+        "nomeParagrafo": "Query Catalogo",
+        "codicePlSql": "--TC1 SMS_ATTIV , SMS_DISATTIV\nSELECT CODICE_POPZ, ROPZ_PADRE,SMS_ATTIV , SMS_DISATT\nFROM catalogo_popz\n WHERE (CODICE_POPZ, ROPZ_PADRE) IN\n(('POPZ508254','ROPZ4802'),\n('POPZ507049','ROPZ4847'))\n\n\n--TC2  bundle_rda,bundle_dati,qos\n\nSELECT CODICE_POPZ, ROPZ_PADRE,bundle_rda,bundle_dati,qos\nFROM catalogo_popz \nWHERE (CODICE_POPZ, ROPZ_PADRE) IN (\n('POPZ510054','ROPZ4775'),\n('POPZ510053','ROPZ4781'),\n('POPZ510015','ROPZ4801'))",
+        "outPutSql": "CODICE_POPZ\tROPZ_PADRE\tSMS_ATTIV\tSMS_DISATT\nPOPZ508254\tROPZ4802\tDi Piu' Full 5G Unlimited e' attiva a 16,99 euro/mese. Scopri le novita' a te dedicate sulla nostra APP windtre.it/W3 e con WINDAY, ogni giorno una sorpresa!\tDi Piu' Full 5G Unlimited e' stata disattivata. Per informazioni sulle offerte WINDTRE visita l'app o vai su windtre.it\nPOPZ507049\tROPZ4847\tAll Inclusive Unlimited e' attiva a 14,45 euro/mese. Scopri le novita' a te dedicate sulla nostra APP windtre.it/W3 e con WINDAY, ogni giorno una sorpresa!\tAll Inclusive Unlimited e' stata disattivata. Per informazioni sulle offerte WINDTRE visita l'app o vai su windtre.it"
+      }
+    ]
   }
 ]
