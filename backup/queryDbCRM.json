@@ -58,5 +58,17 @@
         "outPutSql": "CODICE_POPZ_SEQ\tROPZ_PADRE\tSMS_ATTIV\tSMS_DISATT\nPOPZ507049\tROPZ4847\tAll Inclusive Unlimited e' attiva a 14,45 euro/mese. Scopri le novita' a te dedicate sulla nostra APP windtre.it/W3 e con WINDAY, ogni giorno una sorpresa!\tAll Inclusive Unlimited e' stata disattivata. Per informazioni sulle offerte WINDTRE visita l'app o vai su windtre.it\nPOPZ508254\tROPZ4802\tDi Piu' Full 5G Unlimited e' attiva a 16,99 euro/mese. Scopri le novita' a te dedicate sulla nostra APP windtre.it/W3 e con WINDAY, ogni giorno una sorpresa!\tDi Piu' Full 5G Unlimited e' stata disattivata. Per informazioni sulle offerte WINDTRE visita l'app o vai su windtre.it"
       }
     ]
+  },
+  {
+    "id": "5",
+    "nomeCapitolo": "ANALISI SMS",
+    "paragrafi": [
+      {
+        "id": "5.1",
+        "nomeParagrafo": "Query associativa tra ROPZ ed SMS",
+        "codicePlSql": "select * from t_sms_send where msisdn='33'",
+        "outPutSql": "Incolla qui la tua tabella"
+      }
+    ]
   }
 ]
