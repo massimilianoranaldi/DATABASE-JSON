@@ -66,8 +66,8 @@
       {
         "id": "5.1",
         "nomeParagrafo": "Query associativa tra ROPZ ed SMS",
-        "codicePlSql": "select * from t_sms_send where msisdn='33'",
-        "outPutSql": "Incolla qui la tua tabella"
+        "codicePlSql": "select * from t_sms_send where msisdn='3355270608'\n",
+        "outPutSql": "REQUEST_ID\tREQUEST_ID_PROG\tMESSAGE\tMSISDN\tINS_DATE\tACT_DATE\tMAX_RETRY_NO\tEXPIRY_DATE\tTS_DATE\tCURR_RETRY_NO\tRESPONSE_CODE\tRESPONSE_MSG\tSTATUS\tSCTS\tSISTEMA\tTRANSID\tTIPOLOGIA\tCODICE_TIPO_EVENTO\tDDT\tGW_TRANSID\tNOTIFICA_TRASMISSIONE\tNUMUPDATE\tINSERTEDBY\tUPDATEDBY\tSMS_ID\tSOGLIA_ID\tSMS_TYPE\tX_LOTTO_ARC\tINTEGRATION_ID\tCONTRACT_ID\tSMS_MITT\tID_REQUEST_OSF\tID_OSF_DETAIL\tSMS_MITTENTE_DINAMICO\tTS_INSERTED\tSMS_BATCH_GROUP\tSMS_BATCH_STATUS\tSMS_ROS_LOG_ID\n5145871984\t1\tTi abbiamo addebitato 0.99 euro per il costo di WINDTRE Security Pro.\t3355270608\t02/10/2020\t02/10/2020\t3\t04/10/2020\t02/10/2020\t1\t0\t\tS\t\tSDM\t0000001\t4\tNC_504998\t02/10/2020\t\t1\t0\t\t\tSMS_205972\t\tO\t\t\t\t\t6015697018\t2576378004\t\t02/10/2020 09:27:15,105632\t19136047\t\t"
       }
     ]
   }
