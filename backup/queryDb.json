@@ -322,5 +322,17 @@
         "outPutSql": "CODICE_POPZ\tROPZ_PADRE\tSMS_ATTIV\tSMS_DISATT\nPOPZ508254\tROPZ4802\tDi Piu' Full 5G Unlimited e' attiva a 16,99 euro/mese. Scopri le novita' a te dedicate sulla nostra APP windtre.it/W3 e con WINDAY, ogni giorno una sorpresa!\tDi Piu' Full 5G Unlimited e' stata disattivata. Per informazioni sulle offerte WINDTRE visita l'app o vai su windtre.it\nPOPZ507049\tROPZ4847\tAll Inclusive Unlimited e' attiva a 14,45 euro/mese. Scopri le novita' a te dedicate sulla nostra APP windtre.it/W3 e con WINDAY, ogni giorno una sorpresa!\tAll Inclusive Unlimited e' stata disattivata. Per informazioni sulle offerte WINDTRE visita l'app o vai su windtre.it"
       }
     ]
+  },
+  {
+    "id": "19",
+    "nomeCapitolo": "ANALISI SDM",
+    "paragrafi": [
+      {
+        "id": "19.1",
+        "nomeParagrafo": "Estrazione eventi con OPT",
+        "codicePlSql": "select * from action a, action_msg b \nwhere b.id=a.message_id and \nb.message_xml like '%OPT153%' \nand a.name='SIM Activation' and \na.ts_created>to_date('16/09/2024','dd/mm/yyyy') and rownum<3",
+        "outPutSql": "ID\tNAME\tDIRECTION\tSTATUS\tTS_REQUESTED\tTS_CREATED\tTS_ENQUEUED\tTS_FIRST_START\tTS_START\tTS_END\tPRIORITY\tTS_TODO\tQUEUE\tREQUEST_ID\tMESSAGE_ID\tSYSTEM\tCFG_ID\tHANDLER\tRESPONSE_ID\tADB_SOURCE\tRESULT\n71346527510\tSIM Activation\toutbound\tSA\t10/10/2024 13:40:29,000000\t07/10/2024 12:25:48,414220\t21/10/2024 15:20:47,000000\t21/10/2024 15:20:47,000000\t21/10/2024 15:20:47,000000\t21/10/2024 15:20:48,000000\t1\t21/10/2024 15:16:54,028000\tqueue.sdm.out\t3619620035\t-35023709597\tsdm\t30\t/esb2sdm/process/businessService/bwBSInvioOrdineSdmOut.process\t\t\t\n71156016283\tSIM Activation\toutbound\tSA\t20/09/2024 01:30:34,000000\t17/09/2024 12:49:08,831364\t\t20/09/2024 01:30:34,000000\t20/09/2024 01:30:34,000000\t20/09/2024 01:30:38,000000\t1\t\tqueue.sdm.out\t3605492396\t-34725911509\tsdm\t30\t/esb2sdm/process/businessService/bwBSInvioOrdineSdmOut.process\t\t\t"
+      }
+    ]
   }
 ]
