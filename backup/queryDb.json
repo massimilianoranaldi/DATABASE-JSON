@@ -342,8 +342,8 @@
       {
         "id": "20.1",
         "nomeParagrafo": "Estrazione eventi",
-        "codicePlSql": "\nselect * from request where name='Logistic Light' and rownum<2",
-        "outPutSql": "ID\tNAME\tDIRECTION\tSYSTEM\tSTATUS\tTS_CREATED\tTS_END\tCASE_ID\tQUEUE_PREFIX\tDOCUMENT_ID\tCFG_ID\tPARENT_ID\tROOT_ID\tAREA\tRELEASE\tSUBSTATUS\n2709613633\tLogistic Light\toutbound\tgsi\tSA\t01/07/2021 10:14:39,519992\t07/07/2021 14:11:36,127000\t2669035859\t\t2534838311\t273\t2709613569\t2709613569\tOrder\t\t"
+        "codicePlSql": "select a.name,b.name,a.id,b.id,a.ts_created from \nrequest a,\nrequest b \nwhere a.name='Logistic Light' \nand b.id=a.root_id\nand a.ts_created>sysdate-10 \nand rownum<10",
+        "outPutSql": "NAME\tNAME_1\tID\tID_1\tTS_CREATED\nLogistic Light\tOrder Management Light\t3641419987\t3641419983\t04/11/2024 15:16:49,186530\nLogistic Light\tOrder Management Light\t3638796266\t3638796238\t30/10/2024 13:45:46,319075\nLogistic Light\tOrder Management Light\t3641175439\t3641175433\t04/11/2024 09:03:13,040617\nLogistic Light\tOrder Management Light\t3641415081\t3641415077\t04/11/2024 15:06:36,503053\nLogistic Light\tOrder Management Light\t3641414929\t3641414923\t04/11/2024 15:06:23,591803\nLogistic Light\tOrder Management Light\t3641414981\t3641414960\t04/11/2024 15:06:25,725673\nLogistic Light\tOrder Management Light\t3642286330\t3642286313\t05/11/2024 14:31:31,043528\nLogistic Light\tOrder Management Light\t3638660025\t3638660006\t30/10/2024 11:54:56,906300\nLogistic Light\tOrder Management Light\t3641319235\t3641319228\t04/11/2024 12:14:46,879818"
       }
     ]
   }
