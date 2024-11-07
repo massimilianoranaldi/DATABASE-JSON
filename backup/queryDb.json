@@ -350,6 +350,12 @@
         "nomeParagrafo": "[DBF-GSI] Estrazione record sulla tabella dei reintegri SIM ",
         "codicePlSql": "Scrivi qui il codice PLSQL",
         "outPutSql": "Incolla qui la tua tabella"
+      },
+      {
+        "id": "20.3",
+        "nomeParagrafo": "[DBF-GSI] Estrazione record sulla tabella dei reintegri EQUIPMENT ",
+        "codicePlSql": "Scrivi qui il codice PLSQL",
+        "outPutSql": "Incolla qui la tua tabella"
       }
     ]
   }
