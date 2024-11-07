@@ -358,5 +358,17 @@
         "outPutSql": "ID_ORDINE_GSI\tTRANSACTION_ID\tSENDER_NAME\tRECEIVER_NAME\tSALESDOCUMENT\tFLAG_SALESDOCUMENT\tFLAG_CUSTOMERNO\tCUSTOMERNO\tDATA_ORDINE\tDATA_CLIENTE\tRETURN\tQORUS_WFIID\tSTATUS\tCREATION_DATE\tCREATED_BY\tLAST_UPDATED_DATE\tLAST_UPDATED_BY\tFLAG_REINTEGRO\n25619799\t71585459502\tGSI\tEBS\t25619799\tS\tS\t5003309765\t29/10/2024 14:45:20\t29/10/2024 14:45:05\t\t54690377\tN\t29/10/2024 14:49:17\t54690377\t\t\tY"
       }
     ]
+  },
+  {
+    "id": "21",
+    "nomeCapitolo": "ANALISI LOGISTICA",
+    "paragrafi": [
+      {
+        "id": "21.1",
+        "nomeParagrafo": "Estrazione casi di Reso Corporate ",
+        "codicePlSql": "\n\nselect * from action where system='sap' and name='Send order reso' and ts_created>sysdate-50 and rownum<10",
+        "outPutSql": "PARTITION_DATE\tEXPORTED\tDELETED\tID\tNAME\tDIRECTION\tSTATUS\tTS_REQUESTED\tTS_CREATED\tTS_ENQUEUED\tTS_FIRST_START\tTS_START\tTS_END\tPRIORITY\tTS_TODO\tQUEUE\tREQUEST_ID\tMESSAGE_ID\tSYSTEM\tCFG_ID\tHANDLER\tRESPONSE_ID\tADB_SOURCE\tRESULT\n29/10/2024\tY\tN\t71429132727\tSend order reso\toutbound\tSA\t14/10/2024 14:46:45,000000\t14/10/2024 14:46:45,651472\t\t14/10/2024 14:46:45,000000\t14/10/2024 14:46:45,000000\t14/10/2024 14:46:46,000000\t1\t\tqueue.sap.out\t3625975720\t-34953407622\tsap\t6383\t/esb2sap/process/businessService/OrderManagement/ResoSme/bwBSInvioOrdineResoOut.process\t\t\t"
+      }
+    ]
   }
 ]
