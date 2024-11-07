@@ -354,8 +354,8 @@
       {
         "id": "20.3",
         "nomeParagrafo": "[DBF-GSI] Estrazione record sulla tabella dei reintegri EQUIPMENT ",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
-        "outPutSql": "Incolla qui la tua tabella"
+        "codicePlSql": "select salesdocument id_ordine_gsi,a.* \nfrom \nX_GSI_ESB_ORDINI  a,\nx_gsi_esb_reintegro_cpe b  \nwhere 1=1 \nand transaction_id=71585459502 -- action outbound esb\nand a.salesdocument=b.id_ordine_gsi\nand data_ordine>sysdate-10\nand rownum<20",
+        "outPutSql": "ID_ORDINE_GSI\tTRANSACTION_ID\tSENDER_NAME\tRECEIVER_NAME\tSALESDOCUMENT\tFLAG_SALESDOCUMENT\tFLAG_CUSTOMERNO\tCUSTOMERNO\tDATA_ORDINE\tDATA_CLIENTE\tRETURN\tQORUS_WFIID\tSTATUS\tCREATION_DATE\tCREATED_BY\tLAST_UPDATED_DATE\tLAST_UPDATED_BY\tFLAG_REINTEGRO\n25619799\t71585459502\tGSI\tEBS\t25619799\tS\tS\t5003309765\t29/10/2024 14:45:20\t29/10/2024 14:45:05\t\t54690377\tN\t29/10/2024 14:49:17\t54690377\t\t\tY"
       }
     ]
   }
