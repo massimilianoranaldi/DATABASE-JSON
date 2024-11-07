@@ -276,7 +276,7 @@
       {
         "id": "15.1",
         "nomeParagrafo": "Estrazione ordini FWA Dati SME",
-        "codicePlSql": "select b.*,d.* from  request b , request c ,request_doc d\nwhere \n1=1 and \nb.ts_created>sysdate-90 and rownum<3 and\nb.root_id=c.id and \nd.id=c.document_id and\nd.document_xml like '%FWA%' and\nb.name='In Order'",
+        "codicePlSql": "select b.*,d.* from  request b , request c ,request_doc d\nwhere \n1=1 and \nb.ts_created>sysdate-90 and rownum<3 and\nb.root_id=c.id and \nd.id=c.document_id and\nd.document_xml like '%\"FWA%' and\nb.name='In Order'",
         "outPutSql": "ID\tNAME\tDIRECTION\tSYSTEM\tSTATUS\tTS_CREATED\tTS_END\tCASE_ID\tQUEUE_PREFIX\tDOCUMENT_ID\tCFG_ID\tPARENT_ID\tROOT_ID\tAREA\tRELEASE\tSUBSTATUS\n3639700740\tIn Order\tinbound\tsiebel\tWP\t31/10/2024 12:54:27,593661\t\t570036694\t\t3429705732\t1\t\t3639700740\tOrder\t\t$result\n3643936923\tIn Order\tinbound\tsiebel\tWP\t07/11/2024 12:17:19,983204\t\t592295936\t\t3433743116\t1\t\t3643936923\tOrder\t\t$result"
       }
     ]
