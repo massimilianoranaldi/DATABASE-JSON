@@ -304,5 +304,17 @@
         "outPutSql": "ID\tNAME\tDIRECTION\tSTATUS\tTS_REQUESTED\tTS_CREATED\tTS_ENQUEUED\tTS_FIRST_START\tTS_START\tTS_END\tPRIORITY\tTS_TODO\tQUEUE\tREQUEST_ID\tMESSAGE_ID\tSYSTEM\tCFG_ID\tHANDLER\tRESPONSE_ID\tADB_SOURCE\tRESULT\tID_1\tNAME_1\tDIRECTION_1\tSYSTEM_1\tSTATUS_1\tTS_CREATED_1\tTS_END_1\tCASE_ID\tQUEUE_PREFIX\tDOCUMENT_ID\tCFG_ID_1\tPARENT_ID\tROOT_ID\tAREA\tRELEASE\tSUBSTATUS\tID_2\tNAME_2\tDIRECTION_2\tSYSTEM_2\tSTATUS_2\tTS_CREATED_2\tTS_END_2\tCASE_ID_1\tQUEUE_PREFIX_1\tDOCUMENT_ID_1\tCFG_ID_2\tPARENT_ID_1\tROOT_ID_1\tAREA_1\tRELEASE_1\tSUBSTATUS_1\n71530763827\tSend order reso\toutbound\tSA\t23/10/2024 12:14:59,000000\t23/10/2024 12:14:59,710856\t\t23/10/2024 12:14:59,000000\t23/10/2024 12:14:59,000000\t23/10/2024 12:15:00,000000\t1\t\tqueue.sap.out\t3633695813\t-35048775673\tsap\t6383\t/esb2sap/process/businessService/OrderManagement/ResoSme/bwBSInvioOrdineResoOut.process\t\t\t\t3633695813\tLogistics\toutbound\tsap\tSA\t23/10/2024 12:14:59,325597\t05/11/2024 00:40:12,056000\t544555291\t\t3423972837\t2\t3633695808\t3633695808\tOrder\t\tLogistica Completata\t3633695808\tOutOrder\tinbound\tsiebel\tSA\t23/10/2024 12:14:58,438772\t05/11/2024 00:40:12,957000\t543766130\t\t3423972828\t75\t\t3633695808\tOrder\t\tCompletato\n70909987786\tSend order reso\toutbound\tSA\t21/08/2024 08:51:04,000000\t21/08/2024 08:51:04,181885\t\t21/08/2024 08:51:04,000000\t21/08/2024 08:51:04,000000\t21/08/2024 08:51:04,000000\t1\t\tqueue.sap.out\t3587121825\t-34462435198\tsap\t6383\t/esb2sap/process/businessService/OrderManagement/ResoSme/bwBSInvioOrdineResoOut.process\t\t\t\t3587121825\tLogistics\toutbound\tsap\tWP\t21/08/2024 08:51:03,953004\t\t334289956\t\t3379170032\t2\t3587121822\t3587121822\tOrder\t\tIn Attesa Esiti Logistica\t3587121822\tOutOrder\tinbound\tsiebel\tWP\t21/08/2024 08:51:03,177172\t\t334289942\t\t3379170027\t75\t\t3587121822\tOrder\t\t\n"
       }
     ]
+  },
+  {
+    "id": "18",
+    "nomeCapitolo": "ANALISI ORDINI CAMBIO MAC ADDRESS",
+    "paragrafi": [
+      {
+        "id": "18.1",
+        "nomeParagrafo": "Estrazione ordini con causale dedicata",
+        "codicePlSql": "Scrivi qui il codice PLSQL",
+        "outPutSql": "Incolla qui la tua tabella"
+      }
+    ]
   }
 ]
