@@ -280,5 +280,17 @@
         "outPutSql": "ID\tNAME\tDIRECTION\tSYSTEM\tSTATUS\tTS_CREATED\tTS_END\tCASE_ID\tQUEUE_PREFIX\tDOCUMENT_ID\tCFG_ID\tPARENT_ID\tROOT_ID\tAREA\tRELEASE\tSUBSTATUS\n3639700740\tIn Order\tinbound\tsiebel\tWP\t31/10/2024 12:54:27,593661\t\t570036694\t\t3429705732\t1\t\t3639700740\tOrder\t\t$result\n3643936923\tIn Order\tinbound\tsiebel\tWP\t07/11/2024 12:17:19,983204\t\t592295936\t\t3433743116\t1\t\t3643936923\tOrder\t\t$result"
       }
     ]
+  },
+  {
+    "id": "16",
+    "nomeCapitolo": "ANALISI LOGISTICA LIGHT (REINTEGRO)",
+    "paragrafi": [
+      {
+        "id": "16.1",
+        "nomeParagrafo": "Estrazione eventi Reintegro",
+        "codicePlSql": "select * from action a, request b,request c\nwhere \na.name in ('Send order Equipment','Send order Sim') \nand a.request_id=b.id \nand b.root_id=c.id \nand c.ts_created>sysdate-10 \nand rownum<3",
+        "outPutSql": "ID\tNAME\tDIRECTION\tSTATUS\tTS_REQUESTED\tTS_CREATED\tTS_ENQUEUED\tTS_FIRST_START\tTS_START\tTS_END\tPRIORITY\tTS_TODO\tQUEUE\tREQUEST_ID\tMESSAGE_ID\tSYSTEM\tCFG_ID\tHANDLER\tRESPONSE_ID\tADB_SOURCE\tRESULT\tID_1\tNAME_1\tDIRECTION_1\tSYSTEM_1\tSTATUS_1\tTS_CREATED_1\tTS_END_1\tCASE_ID\tQUEUE_PREFIX\tDOCUMENT_ID\tCFG_ID_1\tPARENT_ID\tROOT_ID\tAREA\tRELEASE\tSUBSTATUS\tID_2\tNAME_2\tDIRECTION_2\tSYSTEM_2\tSTATUS_2\tTS_CREATED_2\tTS_END_2\tCASE_ID_1\tQUEUE_PREFIX_1\tDOCUMENT_ID_1\tCFG_ID_2\tPARENT_ID_1\tROOT_ID_1\tAREA_1\tRELEASE_1\tSUBSTATUS_1\n71678817945\tSend order Equipment\toutbound\tSA\t08/11/2024 10:39:45,000000\t08/11/2024 10:39:45,805965\t\t08/11/2024 10:39:45,000000\t08/11/2024 10:39:45,000000\t08/11/2024 10:39:46,000000\t1\t\tqueue.gsi.out\t3644702128\t-35188860427\tgsi\t6962\t/esb2sap/process/businessService/LogisticSystem/bwBSInvioOrdineLogisticManagementOut.process\t\t\t\t3644702128\tLogistic Light\toutbound\tgsi\tWP\t08/11/2024 10:39:45,450349\t\t602385572\t\t3434484665\t273\t3644702115\t3644702115\tOrder\t\t\t3644702115\tOrder Management Light\tinbound\tsiebel\tWP\t08/11/2024 10:39:44,540267\t\t601536682\t\t3434484658\t272\t\t3644702115\tOrder\t\t\n71665850815\tSend order Equipment\toutbound\tSA\t07/11/2024 09:46:03,000000\t07/11/2024 09:46:04,111924\t\t07/11/2024 09:46:04,000000\t07/11/2024 09:46:04,000000\t07/11/2024 09:46:05,000000\t1\t\tqueue.gsi.out\t3643713411\t-35176536463\tgsi\t6962\t/esb2sap/process/businessService/LogisticSystem/bwBSInvioOrdineLogisticManagementOut.process\t\t\t\t3643713411\tLogistic Light\toutbound\tgsi\tWP\t07/11/2024 09:46:03,357052\t\t599644299\t\t3433525600\t273\t3643713385\t3643713385\tOrder\t\t\t3643713385\tOrder Management Light\tinbound\tsiebel\tWP\t07/11/2024 09:46:02,180946\t\t599662057\t\t3433525560\t272\t\t3643713385\tOrder\t\t\n"
+      }
+    ]
   }
 ]
