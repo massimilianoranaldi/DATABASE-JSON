@@ -316,5 +316,17 @@
         "outPutSql": "Incolla qui la tua tabella"
       }
     ]
+  },
+  {
+    "id": "19",
+    "nomeCapitolo": "ANALISI POPZ",
+    "paragrafi": [
+      {
+        "id": "19.1",
+        "nomeParagrafo": "Estrazione fallimenti catalogo popz",
+        "codicePlSql": "\n\nselect \n(select id from action where request_id=b.request_id and system='kenan' and direction='outbound') transaction_id_bill\n,a.* \nfrom detail a,action b \nwhere a.root_id=b.request_id and a.name='transaction_id' and value in \n(\n'POPZ519246',\n'POPZ519247',\n'POPZ519248',\n'POPZ519249',\n'POPZ519250',\n'POPZ519251',\n'POPZ519252',\n'POPZ519253',\n'POPZ519254',\n'POPZ519255',\n'POPZ519256',\n'POPZ519257',\n'POPZ519242',\n'POPZ519243',\n'POPZ519267',\n'POPZ519273'\n) and status not in ('SA','SK','BK') \n",
+        "outPutSql": "Incolla qui la tua tabella"
+      }
+    ]
   }
 ]
