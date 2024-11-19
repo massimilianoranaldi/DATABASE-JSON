@@ -311,8 +311,8 @@
     "paragrafi": [
       {
         "id": "18.1",
-        "nomeParagrafo": "Estrazione ordini con causale dedicata",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
+        "nomeParagrafo": "Estrazione ordini con causale dedicata \"Cambio MAC Address\"",
+        "codicePlSql": "select * from request r, request_doc rd\nwhere \nr.name ='Change Provisioning'\nand r.document_id = rd.id \nand rd.document_xml like '%Cambio MAC Address</ns0:causaleOrdine>%'\nand r.ts_created>sysdate-90 and rownum<2\n\n\nselect * from request r, request_doc rd\nwhere \nr.name ='Change Provisioning'\nand r.document_id = rd.id \nand rd.document_xml like '%Cambio MAC Address</ns0:esbField>%'\nand r.ts_created>sysdate-90 and rownum<2",
         "outPutSql": "Incolla qui la tua tabella"
       }
     ]
