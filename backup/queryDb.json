@@ -334,5 +334,17 @@
         "outPutSql": "Incolla qui la tua tabella"
       }
     ]
+  },
+  {
+    "id": "20",
+    "nomeCapitolo": "REL NOVEMBRE 2024",
+    "paragrafi": [
+      {
+        "id": "20.1",
+        "nomeParagrafo": "ID110715 - estrazione ordini con FWAENT",
+        "codicePlSql": "\nselect \nextractValue(xmltype(b.document_xml),'ns0:commercialOrder/ns0:order/ns0:idCommercialOrder','xmlns:ns0=\"http://phoenix.wind.it/common/CommercialOrder\"') as id_ordine,\n--extractvalue(xmltype(b.document_xml),'descendant::ns0:nomeApnDati','xmlns:ns0=\"http://phoenix.wind.it/common/CommercialOrder\"') as nomeApnDati,\n--extractvalue(xmltype(b.document_xml),'descendant::ns0:nomeApnVoce','xmlns:ns0=\"http://phoenix.wind.it/common/CommercialOrder\"') as nomeApnVoce,\nd.name,a.status,c.*\n from request a, request_doc b ,action c , request d where \nb.id=d.document_id and \n--c.id=71276337268 and\nc.system='sdm' and \nc.direction='outbound' and \nc.ts_first_start is null  and\n--c.ts_created<sysdate-2 and\nc.request_id=a.id and \na.root_id=d.id and \nb.document_xml like '%FWAENT%' and\nd.name='In Order' and\na.name='Network' and\nc.name='SIM Activation' and\na.status='WP' and \n rownum<400",
+        "outPutSql": "ID_ORDINE\tNAME\tSTATUS\tID\tNAME_1\tDIRECTION\tSTATUS_1\tTS_REQUESTED\tTS_CREATED\tTS_ENQUEUED\tTS_FIRST_START\tTS_START\tTS_END\tPRIORITY\tTS_TODO\tQUEUE\tREQUEST_ID\tMESSAGE_ID\tSYSTEM\tCFG_ID\tHANDLER\tRESPONSE_ID\tADB_SOURCE\tRESULT\n1-641088839060\tIn Order\tWP\t71770108864\tSIM Activation\toutbound\tTD\t22/11/2024 01:30:43,000000\t18/11/2024 08:17:16,776603\t\t\t\t\t1\t01/01/3000 00:00:00,000000\tqueue.sdm.out\t3651464765\t\tsdm\t30\t/esb2sdm/process/businessService/bwBSInvioOrdineSdmOut.process\t\t\t\n1-640300014089\tIn Order\tWP\t71642889124\tSIM Activation\toutbound\tTD\t07/11/2024 00:31:13,000000\t05/11/2024 09:58:42,001219\t\t\t\t\t1\t01/01/3000 00:00:00,000000\tqueue.sdm.out\t3642038038\t\tsdm\t30\t/esb2sdm/process/businessService/bwBSInvioOrdineSdmOut.process\t\t\t\n1-605741955156\tIn Order\tWP\t67649608687\tSIM Activation\toutbound\tTD\t09/10/2023 23:32:13,000000\t04/10/2023 13:17:39,692526\t\t\t\t\t1\t01/01/3000 00:00:00,000000\tqueue.sdm.out\t3348317105\t\tsdm\t30\t/esb2sdm/process/businessService/bwBSInvioOrdineSdmOut.process\t\t\t"
+      }
+    ]
   }
 ]
