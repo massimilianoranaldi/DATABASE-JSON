@@ -352,5 +352,17 @@
         "outPutSql": "ID_ORDINE\tNAME\tSTATUS\tID\tNAME_1\tDIRECTION\tSTATUS_1\tTS_REQUESTED\tTS_CREATED\tTS_ENQUEUED\tTS_FIRST_START\tTS_START\tTS_END\tPRIORITY\tTS_TODO\tQUEUE\tREQUEST_ID\tMESSAGE_ID\tSYSTEM\tCFG_ID\tHANDLER\tRESPONSE_ID\tADB_SOURCE\tRESULT\n1-641088839060\tIn Order\tWP\t71770108864\tSIM Activation\toutbound\tTD\t22/11/2024 01:30:43,000000\t18/11/2024 08:17:16,776603\t\t\t\t\t1\t01/01/3000 00:00:00,000000\tqueue.sdm.out\t3651464765\t\tsdm\t30\t/esb2sdm/process/businessService/bwBSInvioOrdineSdmOut.process\t\t\t\n1-640300014089\tIn Order\tWP\t71642889124\tSIM Activation\toutbound\tTD\t07/11/2024 00:31:13,000000\t05/11/2024 09:58:42,001219\t\t\t\t\t1\t01/01/3000 00:00:00,000000\tqueue.sdm.out\t3642038038\t\tsdm\t30\t/esb2sdm/process/businessService/bwBSInvioOrdineSdmOut.process\t\t\t\n1-605741955156\tIn Order\tWP\t67649608687\tSIM Activation\toutbound\tTD\t09/10/2023 23:32:13,000000\t04/10/2023 13:17:39,692526\t\t\t\t\t1\t01/01/3000 00:00:00,000000\tqueue.sdm.out\t3348317105\t\tsdm\t30\t/esb2sdm/process/businessService/bwBSInvioOrdineSdmOut.process\t\t\t"
       }
     ]
+  },
+  {
+    "id": "21",
+    "nomeCapitolo": "ANALISI OPERATORI MOBILI",
+    "paragrafi": [
+      {
+        "id": "21.1",
+        "nomeParagrafo": "Estrazione ordini attivazione CRP",
+        "codicePlSql": "select \nextractValue(xmltype(f.document_xml),'ns0:commercialOrder/ns0:order/ns0:idCommercialOrder','xmlns:ns0=\"http://phoenix.wind.it/common/CommercialOrder\"') as id_ordine,\nd.*\nfrom request d,request_doc f  where \n1=1 and\nd.name='In Order' and \nf.id=d.document_id and \nf.document_xml like '%GREENICN%' and\nd.ts_created>sysdate-490 and \n--d.status='SA'  and\nrownum<2",
+        "outPutSql": ""
+      }
+    ]
   }
 ]
