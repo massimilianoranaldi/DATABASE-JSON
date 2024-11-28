@@ -5,15 +5,20 @@
     "paragrafi": [
       {
         "id": "1.1",
-        "nomeParagrafo": "Estrae action associate ad un cdf",
-        "codicePlSql": "select a.name,a.id,c.name,c.id,b.name,b.value,c.status from request a , detail b ,action c \nwhere b.root_id=a.root_id and \n--b.value ='556023903' and b.name='id_billing_account_rc'\nb.value in ('69553034574','69553034575','69540311570','69553041762') and b.name='transaction_id'\nand c.request_id=a.id",
-        "outPutSql": "\"name\"\t\"id\"\t\"name\"\t\"id\"\t\"name\"\t\"value\"\t\"status\"\n\"Subentro SI\"\t140213083\t\"Subentro SI Kenan Old Cli\"\t1250685437\t\"transaction_id\"\t\"69553034574\"\t\"WP\"\n\"Subentro SI\"\t140213083\t\"Retrieve Ase Cust Subentro SI Old Cli\"\t1230610700\t\"transaction_id\"\t\"69553034574\"\t\"SA\"\n\"Subentro SI\"\t140213083\t\"Conf Retr Ase Cust Subentro SI Old Cli\"\t1250685432\t\"transaction_id\"\t\"69553034574\"\t\"SA\"\n\"Subentro SI\"\t140213083\t\"Receive Subentro SI\"\t1230610691\t\"transaction_id\"\t\"69553034574\"\t\"SA\"\n\"Subentro SI\"\t140213083\t\"Close Request Subentro SI\"\t1230610706\t\"transaction_id\"\t\"69553034574\"\t\"TD\"\n\"Subentro SI\"\t140213087\t\"Retrieve Ase Cust Subentro SI Old Cli\"\t1230610737\t\"transaction_id\"\t\"69553034575\"\t\"SA\"\n\"Subentro SI\"\t140213087\t\"Conf Retr Ase Cust Subentro SI Old Cli\"\t1250685425\t\"transaction_id\"\t\"69553034575\"\t\"SA\"\n\"Subentro SI\"\t140213087\t\"Receive Subentro SI\"\t1230610704\t\"transaction_id\"\t\"69553034575\"\t\"SA\"\n\"Subentro SI\"\t140213087\t\"Close Request Subentro SI\"\t1230610745\t\"transaction_id\"\t\"69553034575\"\t\"TD\"\n\"Subentro SI\"\t140213087\t\"Subentro SI Kenan Old Cli\"\t1250685433\t\"transaction_id\"\t\"69553034575\"\t\"WP\""
-      },
-      {
-        "id": "1.2",
-        "nomeParagrafo": "Estrae i messaggi di errore associati ad action fallite per un certo account",
-        "codicePlSql": "select a.* from fault a, fault_doc b \nwhere b.id=a.document_id \nand a.action_id  in \n(\nselect c.id from request a , detail b ,action c \nwhere b.root_id=a.root_id and \n--b.value='69553034574' and b.name='transaction_id'\nb.value ='556023903' and b.name='id_billing_account_rc'\nand c.request_id=a.id\nand c.status='FA'\n)",
+        "nomeParagrafo": "Par COMB",
+        "codicePlSql": "Scrivi qui il codice PLSQL",
         "outPutSql": "Incolla qui la tua tabella"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "paragrafi": [
+      {
+        "id": "2.1",
+        "nomeParagrafo": "Estrazioni informazioni verso Bolteck",
+        "codicePlSql": "select a.id,a.name,c.id reqChildid,c.root_id ,c.name childName,d.name rootName,\n,extractValue(xmltype(b.message_xml),'ns0:CRMCarrierCreateSubscriptionReconnect/CRMCarrierCreateSubscriptionReconnectRequest/phone/itemCode','xmlns:ns0=\"http://www.wind3/igp/wsdl/createsubscription\"')as codMat \n,extractValue(xmltype(b.message_xml),'ns0:CRMCarrierCreateSubscriptionReconnect/CRMCarrierCreateSubscriptionReconnectRequest/phone/imei','xmlns:ns0=\"http://www.wind3/igp/wsdl/createsubscription\"')as imei\n,extractValue(xmltype(b.message_xml),'ns0:CRMCarrierCreateSubscriptionReconnect/CRMCarrierCreateSubscriptionReconnectRequest/externalId','xmlns:ns0=\"http://www.wind3/igp/wsdl/createsubscription\"')as intIdRopz\nfrom action a ,action_msg b,request c ,request d\nwhere a.name ='Create Subscription Reconnect' and a.status='SA' and a.ts_created>sysdate-150 --13733\nand a.request_id=c.id\nand d.id=c.root_id\nand b.id=a.message_id  \n--and rownum<3\n\n-- query da lanciare su siebel per recupero fasce \n\nselect * from siebel.win_fasce_BOL_OE -- reload open\n\nselect * from siebel.win_fasce_BOLTECH --reload plus\n\nselect * from siebel.win_fasce_reconnects -- reload standard",
+        "outPutSql": "ID\tNAME\tREQCHILDID\tROOT_ID\tCHILDNAME\tROOTNAME\tCODMAT\tIMEI\tINTIDROPZ\n68712665460\tCreate Subscription Reconnect\t3425872708\t3425863495\tMobile Provisioning\tChange Order\t0TZTBL53OU7004\t866502068872322\t1614483507176\n70002415872\tCreate Subscription Reconnect\t3519228606\t3519221503\tMobile Provisioning\tActivation Order\t0TAL255MOU0001\t350814294641220\t1625728566073\n68814127243\tCreate Subscription Reconnect\t3433791363\t3433790377\tMobile Provisioning\tActivation Order\t\t358780103107707\t1615318074574\n69989952729\tCreate Subscription Reconnect\t3517080723\t3517078728\tMobile Provisioning\tActivation Order\t0TAL1250OU0001\t353350908326301\t1625461003947"
       }
     ]
   }
