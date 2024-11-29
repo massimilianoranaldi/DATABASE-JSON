@@ -5,9 +5,9 @@
     "paragrafi": [
       {
         "id": "1.1",
-        "nomeParagrafo": "Par COMB",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
-        "outPutSql": "Incolla qui la tua tabella"
+        "nomeParagrafo": "Estrazione detail (storico)",
+        "codicePlSql": "\nselect * from comb_hst.detail_hs  where \nvalue='70761930590' and \nname='transaction_id'\n--name='tracking_id'",
+        "outPutSql": "\"partition_date\"\t\"id\"\t\"name\"\t\"value\"\t\"pos\"\t\"cfg_id\"\t\"root_id\"\n2024-08-02\t1802989008\t\"transaction_id\"\t\"70761930590\"\t\"0\"\t2\t136024538\n2024-08-02\t1802989008\t\"transaction_id\"\t\"70761930590\"\t\"0\"\t2\t136024538\n2024-08-02\t1802989008\t\"transaction_id\"\t\"70761930590\"\t\"0\"\t2\t136024538\n2024-08-02\t1802989008\t\"transaction_id\"\t\"70761930590\"\t\"0\"\t2\t136024538\n2024-08-02\t1802989008\t\"transaction_id\"\t\"70761930590\"\t\"0\"\t2\t136024538\n2024-08-02\t1802989008\t\"transaction_id\"\t\"70761930590\"\t\"0\"\t2\t136024538"
       }
     ]
   },
