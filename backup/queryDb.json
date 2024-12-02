@@ -376,5 +376,17 @@
         "outPutSql": ""
       }
     ]
+  },
+  {
+    "id": "22",
+    "nomeCapitolo": "ANALISI NOKIA",
+    "paragrafi": [
+      {
+        "id": "22.1",
+        "nomeParagrafo": "Estrazione esiti asincroni Nokia",
+        "codicePlSql": "select * from action a, action_msg b where request_id in \n(select id from request where name='Nokia Provisioning' and rownum<30 and ts_created>sysdate-10)\nand a.direction = 'inbound'\nand b.id=a.message_id\nand a.system='nokia'\nand lower(name) like '%async% activa%'",
+        "outPutSql": "ID\tNAME\tDIRECTION\tSTATUS\tTS_REQUESTED\tTS_CREATED\tTS_ENQUEUED\tTS_FIRST_START\tTS_START\tTS_END\tPRIORITY\tTS_TODO\tQUEUE\tREQUEST_ID\tMESSAGE_ID\tSYSTEM\tCFG_ID\tHANDLER\tRESPONSE_ID\tADB_SOURCE\tRESULT\n71844086425\tAsync Nokia Sim Activation\tinbound\tSA\t25/11/2024 13:06:20,830000\t25/11/2024 12:59:13,483812\t25/11/2024 13:00:10,000000\t25/11/2024 12:59:13,531000\t25/11/2024 13:06:20,000000\t25/11/2024 13:06:21,000000\t1\t\tqueue.nokia.in\t3656890074\t-35345433853\tnokia\t7646\t/esb2jasper/process/businessService/OrderManagement/Nokia/bwBSAsyncResponseNokiaIn.process\t\t\t\n71844019396\tAsync Nokia Sim Activation\tinbound\tSA\t25/11/2024 12:50:00,326000\t25/11/2024 12:50:00,326434\t\t25/11/2024 12:50:00,000000\t25/11/2024 12:50:00,000000\t25/11/2024 12:50:00,000000\t1\t\tqueue.nokia.in\t3656884256\t-35345370131\tnokia\t7646\t/esb2jasper/process/businessService/OrderManagement/Nokia/bwBSAsyncResponseNokiaIn.process\t\t\t\n71844019394\tAsync Nokia Sim Activation\tinbound\tSA\t25/11/2024 12:50:00,322000\t25/11/2024 12:50:00,323903\t25/11/2024 12:54:02,000000\t25/11/2024 12:50:00,395000\t25/11/2024 12:54:02,000000\t25/11/2024 12:54:03,000000\t1\t\tqueue.nokia.in\t3656884256\t-35345370130\tnokia\t7646\t/esb2jasper/process/businessService/OrderManagement/Nokia/bwBSAsyncResponseNokiaIn.process\t\t\t\n"
+      }
+    ]
   }
 ]
