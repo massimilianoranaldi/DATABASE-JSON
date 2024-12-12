@@ -388,5 +388,17 @@
         "outPutSql": "ID\tNAME\tDIRECTION\tSTATUS\tTS_REQUESTED\tTS_CREATED\tTS_ENQUEUED\tTS_FIRST_START\tTS_START\tTS_END\tPRIORITY\tTS_TODO\tQUEUE\tREQUEST_ID\tMESSAGE_ID\tSYSTEM\tCFG_ID\tHANDLER\tRESPONSE_ID\tADB_SOURCE\tRESULT\n71844086425\tAsync Nokia Sim Activation\tinbound\tSA\t25/11/2024 13:06:20,830000\t25/11/2024 12:59:13,483812\t25/11/2024 13:00:10,000000\t25/11/2024 12:59:13,531000\t25/11/2024 13:06:20,000000\t25/11/2024 13:06:21,000000\t1\t\tqueue.nokia.in\t3656890074\t-35345433853\tnokia\t7646\t/esb2jasper/process/businessService/OrderManagement/Nokia/bwBSAsyncResponseNokiaIn.process\t\t\t\n71844019396\tAsync Nokia Sim Activation\tinbound\tSA\t25/11/2024 12:50:00,326000\t25/11/2024 12:50:00,326434\t\t25/11/2024 12:50:00,000000\t25/11/2024 12:50:00,000000\t25/11/2024 12:50:00,000000\t1\t\tqueue.nokia.in\t3656884256\t-35345370131\tnokia\t7646\t/esb2jasper/process/businessService/OrderManagement/Nokia/bwBSAsyncResponseNokiaIn.process\t\t\t\n71844019394\tAsync Nokia Sim Activation\tinbound\tSA\t25/11/2024 12:50:00,322000\t25/11/2024 12:50:00,323903\t25/11/2024 12:54:02,000000\t25/11/2024 12:50:00,395000\t25/11/2024 12:54:02,000000\t25/11/2024 12:54:03,000000\t1\t\tqueue.nokia.in\t3656884256\t-35345370130\tnokia\t7646\t/esb2jasper/process/businessService/OrderManagement/Nokia/bwBSAsyncResponseNokiaIn.process\t\t\t\n"
       }
     ]
+  },
+  {
+    "id": "23",
+    "nomeCapitolo": "ANALISI FMS",
+    "paragrafi": [
+      {
+        "id": "23.1",
+        "nomeParagrafo": "Estrazione eventi WMS",
+        "codicePlSql": "\n\nselect * from (\nselect a.id,a.name,a.ts_created\n,extractvalue(xmltype(b.message_xml),'descendant::ns0:operationTypeOrd','xmlns:ns0=\"http://phoenix.wind.it/esb/EMF-WMC\"') as operationTypeOrd\n,extractvalue(xmltype(b.message_xml),'descendant::ns0:operationTypeSim','xmlns:ns0=\"http://phoenix.wind.it/esb/EMF-WMC\"') as operationTypeSim\n,extractvalue(xmltype(b.message_xml),'descendant::ns0:idOrdineSiebel','xmlns:ns0=\"http://phoenix.wind.it/esb/EMF-WMC\"') as idOrdineSiebel\nfrom action a, action_msg b \nwhere \na.message_id=b.id and\na.system='wmc' and \na.direction='outbound' and\n--a.id=71959729498 and \na.name in \n(select name from cfg_action where system='wmc' and direction='outbound' )\nand a.ts_created>sysdate-100\n) z\nwhere 1=1 \nand OPERATIONTYPEORD  in  ('DELNUM')-- ('DELNUM','COMMIT','PREFERENTIAL_LIST','MODIFY') \nand rownum<3\nand  OPERATIONTYPESIM  in  ('CHG_NUMBER')--not in ('DELSIM','ADD','CHG_NUMBER ') ",
+        "outPutSql": "Incolla qui la tua tabella"
+      }
+    ]
   }
 ]
