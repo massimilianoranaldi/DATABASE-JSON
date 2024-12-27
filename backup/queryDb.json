@@ -400,5 +400,17 @@
         "outPutSql": "Incolla qui la tua tabella"
       }
     ]
+  },
+  {
+    "id": "24",
+    "nomeCapitolo": "ANALISI ORDINI CRP",
+    "paragrafi": [
+      {
+        "id": "24.1",
+        "nomeParagrafo": "Estrazione ordini con causale \"Cambio Numero MNP\" legacy",
+        "codicePlSql": "select \nextractValue(xmltype(f.document_xml),'ns0:commercialOrder/ns0:order/ns0:idCommercialOrder','xmlns:ns0=\"http://phoenix.wind.it/common/CommercialOrder\"') as id_ordine,\nd.*\nfrom request d,request_doc f  where \n1=1 and\nd.name='Change Number Mnp' and \nf.id=d.document_id and \nf.document_xml like '%Cambio Numero MNP%' and\nd.ts_created>sysdate-490 and \nd.status='SA'  and\nrownum<3",
+        "outPutSql": "ID_ORDINE\tID\tNAME\tDIRECTION\tSYSTEM\tSTATUS\tTS_CREATED\tTS_END\tCASE_ID\tQUEUE_PREFIX\tDOCUMENT_ID\tCFG_ID\tPARENT_ID\tROOT_ID\tAREA\tRELEASE\tSUBSTATUS\n1-617509114991\t3453061228\tChange Number Mnp\tinbound\tsiebel\tSA\t16/02/2024 08:40:15,867209\t20/02/2024 04:19:21,444000\t1285425564\t\t3251452241\t70\t\t3453061228\tOrder\t\tCompletato\n1-623861840017\t3504513362\tChange Number Mnp\tinbound\tsiebel\tSA\t02/05/2024 10:11:44,871849\t06/05/2024 06:05:34,125000\t35249757\t\t3300556120\t70\t\t3504513362\tOrder\t\tCompletato"
+      }
+    ]
   }
 ]
