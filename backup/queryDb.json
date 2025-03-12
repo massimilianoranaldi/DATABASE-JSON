@@ -280,5 +280,17 @@
       }
     ],
     "nomeCapitolo": "ANALISI FWA"
+  },
+  {
+    "id": "16",
+    "nomeCapitolo": "SPOOL SU FILE",
+    "paragrafi": [
+      {
+        "id": "16.1",
+        "nomeParagrafo": "spool su file",
+        "codicePlSql": "SPOOL C:\\Users\\massimiliano.ranaldi\\output.txt;\n \nselect a.id,b.message_xml from action a,action_msg b \nwhere a.system='farc' and a.status='SA' and a.request_id=2768936401 and \nb.id=a.message_id;\n \nSPOOL OFF;",
+        "outPutSql": "Incolla qui la tua tabella"
+      }
+    ]
   }
 ]
