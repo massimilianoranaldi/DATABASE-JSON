@@ -278,6 +278,7 @@
         "codicePlSql": "select * from request r, request_doc rd\nwhere \nr.name in ('In Order')\n--r.name in ('Change Provisioning')\n and r.document_id = rd.id \nand rd.document_xml like '%<ns0:tipoServizio>WINDCONNECT</ns0:tipoServizio>%' \nand rd.document_xml like '%tipo=\"TE\" sottoTipo=\"FWAENT%'\n--and  exists (select 1 from request z where z.root_id = r.id and z.name = 'Service Provisioning' and z.status = 'SA')\n--and  exists (select 1 from request z where z.root_id = r.id and z.name = 'Network' and z.status = 'SA')\n--and status = 'SA'\nand r.ts_created>to_date('20/01/2025', 'dd/mm/yyyy')\nand r.status='SA'\nand rownum <2",
         "outPutSql": "Incolla qui la tua tabella"
       }
-    ]
+    ],
+    "nomeCapitolo": "ANALISI FWA"
   }
 ]
