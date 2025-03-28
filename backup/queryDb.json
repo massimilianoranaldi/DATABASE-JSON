@@ -304,5 +304,17 @@
         "outPutSql": "\nNAME\tCFG_ID\tEVENT\nConsistency Alignment\t264\tP02-B01\nConsistency Alignment\t264\tP03-B01\nConsistency Alignment\t264\tP01-B01\nCreate New Billing Account\t20\tP03-01\nCreate New Customer\t4\tP01-01\nCreate New Site\t5\tP02-01\nCreate New Site Referent\t6\tP04-01\nModify Billing Account\t21\tP03-02\nModify Customer\t8\tP01-02\nModify Referent\t7\tP04-02\nModify Site\t9\tP02-02\n\n"
       }
     ]
+  },
+  {
+    "id": "18",
+    "nomeCapitolo": "ORDINI NON WA CON AMOB",
+    "paragrafi": [
+      {
+        "id": "18.1",
+        "nomeParagrafo": "Estrazione ordini non FWA con AMOB",
+        "codicePlSql": "\tselect * from request r, request_doc rd\nwhere \nr.name in ('In Order', 'Extend Order')\n--r.name in ('Change Provisioning')\nand r.document_id = rd.id \nand rd.document_xml like '%<ns0:tipoServizio>WINDCONNECT</ns0:tipoServizio>%' \n--and rd.document_xml like '%tipo=\"TE\" sottoTipo=\"FWAENT3%' ---FWAENT2, FWAENT, FWAENT1  per FWA\nand rd.document_xml like '%tipo=\"TE\" sottoTipo=\"MOB\"%' ---per non FWA\n--and  exists (select 1 from request z where z.root_id = r.id and z.name = 'Service Provisioning' and z.status = 'SA')\n--and  exists (select 1 from request z where z.root_id = r.id and z.name = 'Network' )-- and z.status = 'SA')\nand status = 'SA'\nand r.ts_created>to_date('20/01/2025', 'dd/mm/yyyy')\nand rownum<10;",
+        "outPutSql": "Incolla qui la tua tabella"
+      }
+    ]
   }
 ]
