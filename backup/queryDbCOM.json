@@ -385,22 +385,10 @@
   },
   {
     "id": "13",
-    "nomeCapitolo": "Inserisci il nome del Capitolo",
-    "paragrafi": [
-      {
-        "id": "13.1",
-        "nomeParagrafo": "Inserisci il nome del Paragrafo",
-        "codicePlSql": "Scrivi qui il codice PLSQL",
-        "outPutSql": "Incolla qui la tua tabella"
-      }
-    ]
-  },
-  {
-    "id": "14",
     "nomeCapitolo": "ESTRAZIONI JSONRICORSIVE",
     "paragrafi": [
       {
-        "id": "14.1",
+        "id": "13.1",
         "nomeParagrafo": "Estrazione campi json a partire da Ordine ed action ",
         "codicePlSql": "WITH RECURSIVE base AS (\n  SELECT \n    a.id,\n    b.message_xml::jsonb AS msg\n  FROM action a\n  JOIN action_msg b ON b.id = a.message_id\n  WHERE a.id IN (\n      SELECT z.id\n    FROM action z,\n     request c , \n     detail d\n    WHERE d.value = '1-653679093361'\n      AND d.name = 'id_odl_crm'\n--      AND c.system = 'crm'\n      AND z.direction = 'outbound'\n      AND z.system = 'som'\n      and z.id=620176037913\n      and z.request_id = c.id\n      and d.root_id = c.root_id\n      --      AND z.name = 'Receive Activation Order'\n  )\n),\nrecursive_json AS (\n  -- Livello 1 (radice)\n  SELECT \n    b.id AS action_id,\n    ''::TEXT AS path,\n    kv.key,\n    kv.value,\n    1 AS level\n  FROM base b,\n  LATERAL jsonb_each(b.msg) AS kv\n  UNION ALL\n  -- Livelli successivi fino a 10\n  SELECT \n    r.action_id,\n    CASE \n      WHEN r.path = '' THEN r.key\n      ELSE r.path || '.' || r.key\n    END AS path,\n    kv.key,\n    kv.value,\n    r.level + 1\n  FROM recursive_json r,\n  LATERAL (\n    SELECT *\n    FROM jsonb_each(r.value)\n    WHERE jsonb_typeof(r.value) = 'object'\n    UNION ALL\n    SELECT idx::text, elem\n    FROM jsonb_array_elements(r.value) WITH ORDINALITY AS arr(elem, idx)\n    WHERE jsonb_typeof(r.value) = 'array'\n  ) AS kv(key, value)\n  WHERE r.level < 10\n)\nSELECT \n  action_id,\n  repeat('|  ', level - 1) || '|_ ' || key AS gerarchia,  -- 👈 indentazione a vista\n  path,\n  CASE \n    WHEN jsonb_typeof(value) IN ('array','object') THEN '' \n    ELSE value::text  \n  END AS value,\n  level,\n  jsonb_typeof(value) AS value_type\nFROM recursive_json\nORDER BY action_id, path, key",
         "outPutSql": "action_id\tgerarchia\tpath\tvalue\tlevel\tvalue_type\n620176037903\t|_ externalId\t\t\"1-653679093361\"\t00001\tstring\n620176037903\t|_ requester\t\t\"CRM\"\t00001\tstring\n620176037903\t|_ requestID\t\t\"2487438\"\t00001\tstring\n620176037903\t|_ type\t\t\"ProductOrder\"\t00001\tstring\n620176037903\t|  |  |_ name\tattrs.1\t\"journeyType\"\t00003\tstring\n620176037903\t|  |  |_ value\tattrs.1\t\"OnBoarding\"\t00003\tstring\n620176037903\t|  |  |_ name\tattrs.2\t\"journeySubType\"\t00003\tstring\n620176037903\t|  |  |_ value\tattrs.2\t\"Standard\"\t00003\tstring\n620176037903\t|  |  |_ id\tchannel.1\t\"PHX\"\t00003\tstring\n620176037903\t|  |  |_ action\tproductOrderItem.1\t\"add\"\t00003\tstring\n620176037903\t|  |  |_ id\tproductOrderItem.1\t\"620176037903_1301505531\"\t00003\tstring\n620176037903\t|  |  |_ action\tproductOrderItem.10\t\"add\"\t00003\tstring\n620176037903\t|  |  |_ id\tproductOrderItem.10\t\"620176037903_211176753\"\t00003\tstring\n620176037903\t|  |  |  |_ externalId\tproductOrderItem.10.product\t\"1653684333554\"\t00004\tstring\n620176037903\t|  |  |  |_ id\tproductOrderItem.10.productOffering\t\"po_ANB_MobileAccess4G\"\t00004\tstring\n620176037903\t|  |  |  |  |  |_ name\tproductOrderItem.10.product.productCharacteristic.1\t\"commercialOfferName\"\t00006\tstring\n620176037903\t|  |  |  |  |  |_ value\tproductOrderItem.10.product.productCharacteristic.1\t\"PHX50805\"\t00006\tstring\n620176037903\t|  |  |  |  |  |_ name\tproductOrderItem.10.product.productCharacteristic.2\t\"famiglia\"\t00006\tstring"
