@@ -394,5 +394,17 @@
         "outPutSql": "action_id\tgerarchia\tpath\tvalue\tlevel\tvalue_type\n620176037903\t|_ externalId\t\t\"1-653679093361\"\t00001\tstring\n620176037903\t|_ requester\t\t\"CRM\"\t00001\tstring\n620176037903\t|_ requestID\t\t\"2487438\"\t00001\tstring\n620176037903\t|_ type\t\t\"ProductOrder\"\t00001\tstring\n620176037903\t|  |  |_ name\tattrs.1\t\"journeyType\"\t00003\tstring\n620176037903\t|  |  |_ value\tattrs.1\t\"OnBoarding\"\t00003\tstring\n620176037903\t|  |  |_ name\tattrs.2\t\"journeySubType\"\t00003\tstring\n620176037903\t|  |  |_ value\tattrs.2\t\"Standard\"\t00003\tstring\n620176037903\t|  |  |_ id\tchannel.1\t\"PHX\"\t00003\tstring\n620176037903\t|  |  |_ action\tproductOrderItem.1\t\"add\"\t00003\tstring\n620176037903\t|  |  |_ id\tproductOrderItem.1\t\"620176037903_1301505531\"\t00003\tstring\n620176037903\t|  |  |_ action\tproductOrderItem.10\t\"add\"\t00003\tstring\n620176037903\t|  |  |_ id\tproductOrderItem.10\t\"620176037903_211176753\"\t00003\tstring\n620176037903\t|  |  |  |_ externalId\tproductOrderItem.10.product\t\"1653684333554\"\t00004\tstring\n620176037903\t|  |  |  |_ id\tproductOrderItem.10.productOffering\t\"po_ANB_MobileAccess4G\"\t00004\tstring\n620176037903\t|  |  |  |  |  |_ name\tproductOrderItem.10.product.productCharacteristic.1\t\"commercialOfferName\"\t00006\tstring\n620176037903\t|  |  |  |  |  |_ value\tproductOrderItem.10.product.productCharacteristic.1\t\"PHX50805\"\t00006\tstring\n620176037903\t|  |  |  |  |  |_ name\tproductOrderItem.10.product.productCharacteristic.2\t\"famiglia\"\t00006\tstring"
       }
     ]
+  },
+  {
+    "id": "14",
+    "nomeCapitolo": "ANALISI OCT",
+    "paragrafi": [
+      {
+        "id": "14.1",
+        "nomeParagrafo": "Estrazione evento OCT da ID_PS e transaction id",
+        "codicePlSql": "select b.id,c.* from detail a,request b , request_doc c\nwhere a.value='1132694254' \nand a.name='transaction_id'\nand c.id=b.document_id\nand a.root_id=b.id \nand c.document_xml like '%ID_PS_83443ff7-ae2f-4333-920b-199734fe515f%'",
+        "outPutSql": "\"id\"\t\"name\"\n1858285\t\"New Catalog Offer CPQ\"\n"
+      }
+    ]
   }
 ]
