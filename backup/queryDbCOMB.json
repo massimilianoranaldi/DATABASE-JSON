@@ -22,5 +22,17 @@
         "outPutSql": "Incolla qui la tua tabella"
       }
     ]
+  },
+  {
+    "id": "2",
+    "nomeCapitolo": "ANALISI NP INTERNA",
+    "paragrafi": [
+      {
+        "id": "2.1",
+        "nomeParagrafo": "Estrazione Fallimenti per overlapping",
+        "codicePlSql": "select * from (\nselect a.id,a.name,a.request_id req_id,--e.document_xml,\n(regexp_match(c.document_xml, '\"ServiceExternalId\"\\s*:\\s*\"(0[^\"]*)\"'))[1] ServiceExternalId,\n(regexp_match(c.document_xml, '\"ServiceActiveDt\"\\s*:\\s*\"([^\"]+)\"'))[1] ServiceActiveDt,\n(regexp_match(e.document_xml, '<pfx18:idOrdine>\\s*([^<\\s]+)\\s*<'))[1] AS id_ordine,\n(regexp_match(e.document_xml, '<pfx18:idAccount>\\s*([^<\\s]+)\\s*<'))[1] AS id_account\nfrom \naction a,\nfault b ,\nfault_doc c ,\nrequest d,\nrequest_doc e\nwhere a.name='New SI Kenan' \nand a.status='FA' \nand b.action_id=a.id\nand c.id=b.document_id \nand a.ts_created > current_date-100 \nand d.id=a.request_id\nand d.document_id=e.id\nand c.document_xml  like '%TRIG: INSERT/UPDATE Failed: Overlapping active/inactive dates%'\n) where ServiceExternalId is not null ",
+        "outPutSql": "\"id\";\"name\";\"req_id\";\"serviceexternalid\";\"serviceactivedt\";\"id_ordine\";\"id_account\"\n2386375349;New SI Kenan;271780955;\"0119850450\";\"2025-12-29 00:00:00\";\"1-675971383747\";\"542809248\"\n2401254063;New SI Kenan;273486959;\"04258069\";\"2025-12-10 00:00:00\";\"1-621998607524\";\"620056475\"\n"
+      }
+    ]
   }
 ]
