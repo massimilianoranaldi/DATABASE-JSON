@@ -230,6 +230,12 @@
         "nomeParagrafo": "Estrazione action verso il mobile resource",
         "codicePlSql": "select a.name, c.name,b.name from \nrequest a, \naction b,\nrequest c,\naction_msg d\nwhere \nd.id=b.message_id and\nc.root_id=A.ID and\n--c.name='Network' and\nb.request_id=c.id and \nb.handler like '%mobileResource%' and\nb.system in ('clarify','esb') and \na.ts_created>sysdate-70 and\na.name  in \n('Change-over'\n/*'In Order',\n'OutOrder', --==> \n'Extend Order',\n'Sim/Handset Change', --==> \n'MnpDonor', --==> \n'Change Number Mnp' --==> \n*/) and\nrownum<3",
         "outPutSql": "NAME\tNAME_1\tNAME_2\nChange-over\tNetwork\tUpdate SIM\nChange-over\tNetwork\tUpdate SIM"
+      },
+      {
+        "id": "11.2",
+        "nomeParagrafo": "Estrazione LOG_CALL_ESB Mobile Resource",
+        "codicePlSql": "SELECT * FROM log_call_esb WHERE BW_PROCESS_NAME \nIN \n(\n'mobileResource/process/receiver/MobileResourceManagement.process',\n'mobileResource/process/receiver/MobileResourceBrowsing.process'\n)\nAND INPUT LIKE '%3920272688%'\nAND created BETWEEN to_date('2026/02/18','yyyy/mm/dd') AND to_date('2026/02/21','yyyy/mm/dd')\nAND rownum<60\nORDER BY created",
+        "outPutSql": "n.a."
       }
     ]
   },
