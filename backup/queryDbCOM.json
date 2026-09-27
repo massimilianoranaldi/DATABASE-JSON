@@ -98,6 +98,12 @@
         "nomeParagrafo": "query per estrarre l'id ordine crm a partire dall'id request root (padre) oppure dalla request figlia",
         "codicePlSql": "select * from \ndetail b \nwhere  \nb.name='id_odl_crm' \nand b.root_id in \n(select root_id from request where id=6334928)  --[request id ]",
         "outPutSql": "\"id\"\t\"name\"\t\"value\"\t\"pos\"\t\"cfg_id\"\t\"root_id\"\n127.871.637\t\"id_odl_crm\"\t\"1-691210138907\"\t\"0\"\t13\t6.334.928\n"
+      },
+      {
+        "id": "3.11",
+        "nomeParagrafo": "query per estrarre l'id ordine crm a partire dall'action id ",
+        "codicePlSql": "select * from \ndetail b \nwhere  \nb.name='id_odl_crm' \nand b.root_id in \n(select root_id from request where id in \n\t(select request_id from action where id = 620224445425) --[action id]\n)",
+        "outPutSql": "\"id\"\t\"name\"\t\"value\"\t\"pos\"\t\"cfg_id\"\t\"root_id\"\n127.871.637\t\"id_odl_crm\"\t\"1-691210138907\"\t\"0\"\t13\t6.334.928\n"
       }
     ]
   },
